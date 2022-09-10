@@ -25,6 +25,7 @@ runs:
         curl -sSLo $HOME/.sonar/sonar-scanner.zip ${{ env.SONAR_SCANNER_DOWNLOAD_URL }}
         unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
         echo "$HOME/.sonar/sonar-scanner-${{ inputs.sonar-scanner-version }}-linux/bin" >> $GITHUB_PATH
+      shell: bash
     - name: Download and set up build-wrapper
       env:
         BUILD_WRAPPER_DOWNLOAD_URL: ${{ inputs.sonar-server-url }}/static/cpp/build-wrapper-linux-x86.zip
@@ -32,6 +33,7 @@ runs:
         curl -sSLo $HOME/.sonar/build-wrapper-linux-x86.zip ${{ env.BUILD_WRAPPER_DOWNLOAD_URL }}
         unzip -o $HOME/.sonar/build-wrapper-linux-x86.zip -d $HOME/.sonar/
         echo "$HOME/.sonar/build-wrapper-linux-x86" >> $GITHUB_PATH
+      shell: bash
 
 branding:
   icon: download-cloud
