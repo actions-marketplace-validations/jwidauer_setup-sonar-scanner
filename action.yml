@@ -7,8 +7,13 @@ inputs:
     description: 'What version of sonar scanner to set up.'
     default: '4.7.0.2747'
   sonar-server-url:
-    description: 'What server to use for downloading sonar scanner and build wrapper.'
+    description: 'What server to use for downloading build wrapper.'
     default: 'https://sonarcloud.io'
+
+outputs:
+  sonar-server-url:
+    description: 'The server url used for downloading build wrapper.'
+    value: ${{ inputs.sonar-server-url }}
 
 runs:
   using: "composite"
